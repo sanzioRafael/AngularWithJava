@@ -1,2 +1,1 @@
-"# AngularWithJava" 
-"# AngularWithJava" 
+Integração entre Java EE e AngularJS.
