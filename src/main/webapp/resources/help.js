@@ -1,5 +1,5 @@
 angular.module("HelpApp", [])
-    .value('urlBase', 'http://http://local.mpmt.mp.br:8080/jboss-as-kitchensink-html5-mobile/rest/')
+    .value('urlBase', 'http://localhost:8080/jboss-as-kitchensink-html5-mobile/rest/')
     .controller("ChamadoController", function ($http, urlBase) {
         var self = this;
         self.usuario = 'Rafael Sanzio';
@@ -45,17 +45,8 @@ angular.module("HelpApp", [])
             });
         };
 
-        self.concluir = function (chamado) {
-            self.chamado = chamado;
-
-            $http({
-                method: 'PUT',
-                url: urlBase + 'chamados/' + self.chamado.id + '/'
-            }).then(function successCallback(response) {
-                self.atualizarTabela();
-            }, function errorCallback(response) {
-                self.ocorreuErro();
-            });
+        self.concluir = function () {
+            alert("Para fazer");
         };
 
         self.ocorreuErro = function () {
