@@ -7,12 +7,9 @@
 	<display-name>jboss-as-kitchensink-html5-mobile</display-name>
 	
 	<welcome-file-list>
+		<welcome-file>index.xhtml</welcome-file>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 	
 	<context-param>
@@ -32,16 +29,12 @@
 	</context-param>
 	
 	<listener>
-		<listener-class>
-		  org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap
-		</listener-class>
+		<listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
 	</listener>
 	
 	<servlet>
 		<servlet-name>resteasy-servlet</servlet-name>
-		<servlet-class>
-		  org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
-		</servlet-class>
+		<servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
