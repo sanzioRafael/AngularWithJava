@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Help App</title>
+	<h:outputStylesheet library="css" name="materialize.css" />
+	<h:outputStylesheet library="css" name="materialize.min.css" />
+	<h:outputScript library="js" name="materialize.css.js" />
+	<h:outputScript library="js" name="materialize.css.min.js" />
+</h:head>
+
+<h:body>
+	<ui:include src="menu.xhtml" />
+	
+	<h:panelGroup id="container" layout="block">
+		<div class="body">
+			<ui:insert name="body" />
+		</div>
+	</h:panelGroup>
+	
+	<footer class="page-footer">
+		<center>
+			<div class="row">
+			    <div class="col 16 s12">
+					<b>Help App - Application that helps</b> <br />
+					<p class="grey-text text-lighten-4">Versão @versao@</p>
+				</div>
+			</div>
+		</center>
+	</footer>
+</h:body>
+
+</html>
