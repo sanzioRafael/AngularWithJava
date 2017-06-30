@@ -18,7 +18,7 @@ public class ChamadoNegocio {
 	
 	public List<Chamado> listarTodos() throws Exception {
 		try {
-			return chamadoDAO.listAll();
+			return chamadoDAO.listAll("id");
 		} catch (NoResultException e) {
 			System.out.println(e.getMessage());
 		}

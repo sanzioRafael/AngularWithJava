@@ -6,33 +6,35 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	template="/layout/template.xhtml">
 	
-	<ui:define name="body" >
+	<ui:define name="body">
 		<div class="row" ng-app="Chamado">
 			<div class="col s12" ng-controller="ChamadoController as controller">
 				
 				<div class="col s12">
-					<div class="row" ng-show="controller.chamado">
-						<div class="input-field col s6">
-							<input placeholder="ID" id="chamadoId" type="number" ng-model="controller.chamado.id" disabled="disabled" />
+					<form>
+						<div class="row" ng-show="controller.chamado">
+							<div class="input-field col s6">
+								<input placeholder="ID" id="chamadoId" type="number" ng-model="controller.chamado.id" disabled="disabled" />
+							</div>
+							
+							<div class="input-field col s6">
+								<i class="material-icons prefix">subject</i>
+								<input placeholder="Assunto" id="assunto" type="text" ng-model="controller.chamado.assunto" class="validate" ng-required="true" />
+							</div>
+							
+							<div class="input-field col s12">
+								<i class="material-icons prefix">message</i>
+								<textarea placeholder="Mensagem" id="mensagem" ng-model="controller.chamado.mensagem" class="validate materialize-textarea" ng-required="true"></textarea>
+							</div>
+							
+							<button class="btn waves-effect waves-light blue" type="submit" ng-click="controller.salvar()">
+								 <i class="material-icons right">send</i>Salvar
+							</button>
+							<button class="btn waves-effect waves-light red" type="button" ng-click="controller.chamado = undefined">
+								 Cancelar
+							</button>
 						</div>
-						
-						<div class="input-field col s6">
-							<i class="material-icons prefix">subject</i>
-							<input placeholder="Assunto" id="assunto" type="text" ng-model="controller.chamado.assunto" class="validate" />
-						</div>
-						
-						<div class="input-field col s12">
-							<i class="material-icons prefix">message</i>
-							<textarea placeholder="Mensagem" id="mensagem" ng-model="controller.chamado.mensagem" class="validate materialize-textarea"></textarea>
-						</div>
-						
-						<button class="btn waves-effect waves-light blue" type="button" ng-click="controller.salvar()">
-							 <i class="material-icons right">send</i>Salvar
-						</button>
-						<button class="btn waves-effect waves-light red" type="button" ng-click="controller.chamado = undefined">
-							 Cancelar
-						</button>
-					</div>
+					</form>
 				</div>
 				
 				<div class="col s12" ng-show="!controller.chamado">

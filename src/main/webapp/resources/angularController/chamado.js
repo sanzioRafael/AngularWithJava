@@ -1,5 +1,5 @@
 angular.module("Chamado", [])
-    .value('urlBase', 'http://localhost:8080/jboss-as-kitchensink-html5-mobile/rest/')
+    .value('urlBase', 'http://172.15.4.47:8080/AngularJava/rest/')
     .controller("ChamadoController", function ($http, urlBase) {
         var self = this;
         self.usuario = 'Rafael Sanzio';
