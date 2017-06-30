@@ -13,27 +13,35 @@
 	<h:outputStylesheet library="css" name="materialize.min.css" />
 	<h:outputScript library="js" name="materialize.css.js" />
 	<h:outputScript library="js" name="materialize.css.min.js" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<script src="../resources/js/angular.js" />
+	<script src="../resources/js/angular.min.js" />
+	<script src="../resources/js/angular-route.js" />
+	<script src="../resources/js/angular-route.min.js" />
 </h:head>
 
 <h:body>
-	<ui:include src="menu.xhtml" />
+	<div>
 	
-	<h:panelGroup id="container" layout="block">
-		<div class="body">
-			<ui:insert name="body" />
-		</div>
-	</h:panelGroup>
-	
-	<footer class="page-footer">
-		<center>
-			<div class="row">
-			    <div class="col 16 s12">
-					<b>Help App - Application that helps</b> <br />
-					<p class="grey-text text-lighten-4">Versão @versao@</p>
-				</div>
+		<ui:include src="menu.xhtml" />
+		
+		<h:panelGroup id="container" layout="block">
+			<div class="body">
+				<ui:insert name="body" />
 			</div>
-		</center>
-	</footer>
+		</h:panelGroup>
+		
+		<footer class="page-footer blue">
+			<center>
+				<div class="row">
+				    <div class="col 16 s12">
+						<b>Help App - Application that helps</b> <br />
+						<p class="grey-text text-lighten-4">Versão @versao@</p>
+					</div>
+				</div>
+			</center>
+		</footer>
+	</div>
 </h:body>
 
 </html>

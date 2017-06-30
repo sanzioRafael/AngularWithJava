@@ -7,59 +7,73 @@
 	template="/layout/template.xhtml">
 	
 	<ui:define name="body" >
-		<div data-ng-app="HelpApp">
-			<div data-ng-controller="ChamadoController as controller">
-				<h1>HELP APP</h1>
-				<h5>{{controller.usuario}}</h5>
+		<div class="row" ng-app="Chamado">
+			<div class="col s12" ng-controller="ChamadoController as controller">
 				
-				<div style="border: 1px solid black" data-ng-show="controller.chamado">
-					<label for="camadoId">ID: </label>
-					<input id="chamadoId" type="number" data-ng-model="controller.chamado.id" disabled="disabled" />
-					<br />
-					
-					<label for="assunto">Assunto: </label>
-					<input id="assunto" type="text" data-ng-model="controller.chamado.assunto" />
-					
-					<label for="mensagem">Mensagem: </label>
-					<textarea id="mensagem" rows="4" data-ng-model="controller.chamado.mensagem"></textarea>
-					<br />
-					
-					<button type="button" data-ng-click="controller.salvar()">Salvar</button>
-					<button type="button" data-ng-click="controller.chamado = undefined">Cancelar</button>
+				<div class="col s12">
+					<div class="row" ng-show="controller.chamado">
+						<div class="input-field col s6">
+							<input placeholder="ID" id="chamadoId" type="number" ng-model="controller.chamado.id" disabled="disabled" />
+						</div>
+						
+						<div class="input-field col s6">
+							<i class="material-icons prefix">subject</i>
+							<input placeholder="Assunto" id="assunto" type="text" ng-model="controller.chamado.assunto" class="validate" />
+						</div>
+						
+						<div class="input-field col s12">
+							<i class="material-icons prefix">message</i>
+							<textarea placeholder="Mensagem" id="mensagem" ng-model="controller.chamado.mensagem" class="validate materialize-textarea"></textarea>
+						</div>
+						
+						<button class="btn waves-effect waves-light blue" type="button" ng-click="controller.salvar()">
+							 <i class="material-icons right">send</i>Salvar
+						</button>
+						<button class="btn waves-effect waves-light red" type="button" ng-click="controller.chamado = undefined">
+							 Cancelar
+						</button>
+					</div>
 				</div>
 				
-				<div style="border: 1px solid black" data-ng-show="!controller.chamado">
-					<button type="button" data-ng-click="controller.novo()">Novo Chamado</button>
+				<div class="col s12" ng-show="!controller.chamado">
+					<br />
+					<br />
+					<button class="btn-floating btn-large blue" type="button" ng-click="controller.novo()"><i class="large material-icons">note_add</i></button>
 					<br />
 					<br />
 					
-					<table border="1">
+					<table border="1" class="striped responsive-table">
 						<tr>
-							<th>ID</th>
-							<th>Assunto</th>
-							<th>Status</th>
-							<th>Mensagem</th>
-							<th>Opções</th>
+							<th class="center-align">ID</th>
+							<th class="center-align">Assunto</th>
+							<th class="center-align">Status</th>
+							<th class="center-align">Mensagem</th>
+							<th class="center-align">Opções</th>
 						</tr>
-						<tr data-ng-repeat="chamado in controller.chamados">
-							<td>{{chamado.id}}</td>
-							<td>{{chamado.assunto}}</td>
-							<td>{{chamado.status}}</td>
-							<td>{{chamado.mensagem}}</td>
-							<td>
-								<button type="button" data-ng-click="controller.alterar(chamado)">Alterar</button>
-								<button type="button" data-ng-click="controller.deletar(chamado)">Excluir</button>
-								<button type="button" data-ng-show="chamado.status !== 'FECHADO'" data-ng-click="controller.concluir(chamado)">Concluir</button>
+						<tr ng-repeat="chamado in controller.chamados">
+							<td class="center-align">{{chamado.id}}</td>
+							<td class="center-align">{{chamado.assunto}}</td>
+							<td class="center-align">{{chamado.status}}</td>
+							<td class="center-align">{{chamado.mensagem}}</td>
+							<td class="center-align">
+								<button class="btn-floating btn-large yellow" type="button" ng-click="controller.alterar(chamado)">
+									<i class="large material-icons">mode_edit</i>
+								</button>
+								<button class="btn-floating btn-large red" type="button" ng-click="controller.deletar(chamado)">
+									<i class="large material-icons">delete</i>
+								</button>
+								<button class="btn-floating btn-large green" type="button" ng-show="chamado.status !== 'FECHADO'" ng-click="controller.concluir(chamado)">
+									<i class="large material-icons">done_all</i>
+								</button>
 							</td>
 						</tr>
 					</table>
 				</div>
+				
 			</div>
-			
 		</div>
 		
-		<script src="../resources/js/angular.js"></script>
-		<script src="../resources/angularController/help.js"></script>
+		<script src="../resources/angularController/chamado.js" />
 	</ui:define>
 	
 </ui:composition>

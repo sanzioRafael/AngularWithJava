@@ -1,4 +1,4 @@
-angular.module("HelpApp", [])
+angular.module("Chamado", [])
     .value('urlBase', 'http://localhost:8080/jboss-as-kitchensink-html5-mobile/rest/')
     .controller("ChamadoController", function ($http, urlBase) {
         var self = this;
