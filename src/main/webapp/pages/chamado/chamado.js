@@ -1,5 +1,5 @@
 angular.module("Chamado", [])
-    .value('urlBase', 'http://172.15.4.47:8080/AngularJava/rest/')
+    .value('urlBase', 'http://local.mpmt.mp.br:8080/AngularJava/rest/')
     .controller("ChamadoController", function ($http, urlBase) {
         var self = this;
         self.usuario = 'Rafael Sanzio';
@@ -34,7 +34,7 @@ angular.module("Chamado", [])
 
         self.deletar = function (chamado) {
             self.chamado = chamado;
-
+            
             $http({
                 method: 'DELETE',
                 url: urlBase + 'chamados/' + self.chamado.id + '/'

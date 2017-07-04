@@ -13,20 +13,19 @@
 	<h:outputStylesheet library="css" name="materialize.min.css" />
 	<h:outputScript library="js" name="materialize.css.js" />
 	<h:outputScript library="js" name="materialize.css.min.js" />
+	<h:outputScript library="js" name="angular.js" />
+	<h:outputScript library="js" name="angular.min.js" />
+	<h:outputScript library="js" name="angular-route.js" />
+	<h:outputScript library="js" name="angular-route.min.js" />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-	<script src="../resources/js/angular.js" />
-	<script src="../resources/js/angular.min.js" />
-	<script src="../resources/js/angular-route.js" />
-	<script src="../resources/js/angular-route.min.js" />
 </h:head>
 
 <h:body>
 	<div>
-	
 		<ui:include src="menu.xhtml" />
 		
 		<h:panelGroup id="container" layout="block">
-			<div class="body" ng-view="">
+			<div class="body" >
 				<ui:insert name="body" />
 			</div>
 		</h:panelGroup>
